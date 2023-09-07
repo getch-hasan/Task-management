@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from 'react-router-dom';
+import { AddTaskProvider } from './Pages/Context/AddTaskContext';
+import {  QueryClient, QueryClientProvider,  } from 'react-query';
+const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>  <QueryClientProvider client={queryClient}> <AddTaskProvider><App /></AddTaskProvider></QueryClientProvider></BrowserRouter>
+
   </React.StrictMode>
 );
 
