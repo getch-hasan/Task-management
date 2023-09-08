@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import MyTask from './MyTask';
 
 const Dashboard = () => {
 
@@ -50,6 +51,7 @@ const Dashboard = () => {
                     <h1 className='text-4xl font-bold'>3</h1>
                 </div>
             </div>
+            <MyTask></MyTask>
 
 
         </div>
