@@ -18,7 +18,7 @@ const SignUp = () => {
     const [name, setName] = useState('');
     const [updateProfile, updating, Uerror] = useUpdateProfile(auth);
     if (user) {
-        navigate('/dashboard')
+        navigate('/project')
         console.log(user)
     }
     if (loading) {

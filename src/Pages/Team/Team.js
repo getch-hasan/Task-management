@@ -18,8 +18,9 @@ const Team = () => {
                     </select>
                    </p>
                    <button className='border px-4 py-2 bg-orange-600 rounded-lg mt-4'> Submit</button>
-                 <p>Actually i am not understand what i have do  hare after reading descriptions.But im confident about any task if understand what i have to do</p>
+                 
                 </div>
+                <p className='bg-yellow-200'>Actually i am not understand what i have do  hare after reading descriptions.But im confident about any task if understand what i have to do</p>
             </div>
         </div>
     );
