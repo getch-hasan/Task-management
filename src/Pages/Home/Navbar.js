@@ -11,7 +11,7 @@ const Navbar = () => {
     const { setIsAddTaskOpen } = useAddTask()
     const [signOut, loading, error] = useSignOut(auth);
     const [user] = useAuthState(auth)
-    console.log(user)
+   
     const createHanleProject = () => {
         setIsAddTaskOpen(true)
     }
@@ -81,6 +81,7 @@ const Navbar = () => {
                                         <Link href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">{user?.email}</Link>
                                         <button onClick={async () => {
                                             const success = await signOut();
+                                            setOpenProfile(false)
                                             if (success) {
                                                 alert('You are sign out');
                                             }

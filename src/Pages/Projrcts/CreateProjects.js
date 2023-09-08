@@ -4,7 +4,7 @@ import useAddTask from '../Hooks/useAddTask';
 
 
 const CreateProjects = () => {
-    const { isAddTaskOpen, setIsAddTaskOpen, } = useAddTask()
+    const { isAddTaskOpen, setIsAddTaskOpen,refetch } = useAddTask()
     const [projectName, setProjectName] = useState('')
     const [date, setDate] = useState('')
     const [details, setDetails] = useState('')
@@ -27,7 +27,7 @@ const CreateProjects = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const project = { name: projectName, date: date, details: details }
+        const project = { name: projectName, date: date, details: details,status:'Pending' }
         console.log(project)
         fetch('http://localhost:8000/allTask', {
             method: 'POST',
@@ -38,7 +38,9 @@ const CreateProjects = () => {
         }).then(res => res.json())
             .then(data => {
                 console.log(data)
+                refetch()
             })
+            
 
         setIsAddTaskOpen(false)
         
